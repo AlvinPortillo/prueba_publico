@@ -28,3 +28,4 @@ git diff --cached # lo mismo que "git diff --staged"
 git commit # abrirá el editor designado en la configuración. Cuando se guarde este archivo, se abrá confirmado
 git commit -v # igual que el anerior, pero en el archivo de salida mostrará un mayor detalle de los cambios
 git commit -m "Mensaje de confirmacion" # confirma, y toma desde el comando el mensaje de confirmacion
+git commit -a # automaticamente prepara todos los archivos rastreados, sin tener que pasar por "add"
