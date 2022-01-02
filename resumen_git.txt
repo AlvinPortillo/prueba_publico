@@ -29,3 +29,32 @@ git commit # abrirá el editor designado en la configuración. Cuando se guarde 
 git commit -v # igual que el anerior, pero en el archivo de salida mostrará un mayor detalle de los cambios
 git commit -m "Mensaje de confirmacion" # confirma, y toma desde el comando el mensaje de confirmacion
 git commit -a # automaticamente prepara todos los archivos rastreados, sin tener que pasar por "add"
+
+# para borrar archivos del área de preparación
+# si sólo se borra el archivo del directorio (disco duro) aparecerá como pendiente de confirmar
+# se debe borrar del área de preparación
+rm archivo_borrar.txt
+git rm archivo_borrar.txt
+# si sólo se quiere borrar el archivo del área de trabajo, sin borrar del disco, se saca del área de preparación
+git rm --cached archivo_borrar.txt
+
+# para renombar arcvivos, se usa el mismo comando de linux
+git mv
+#si sólo renombramos un archivo en el directorio, para quit equivale a
+		1. Borrar el archivo anterior
+		2. Encontrar un archivo nuevo, y por tanto se debe agregar (add)
+mv archivo_borrar.txt borrar_archivo.txt
+git rm archivo_borrar.txt
+git add borrar_archivo.txt
+# con git esto se resume en un solo paso
+git mv borrar_archivo.txt archivo_borrar.txt
+
+# para ver el historial de confirmaciones
+git log # muestra las confirmaciones hechas en orden inverso (más reciente primero)
+git log -p # muestra el historial de las confirmaciones y muestra las diferencias introducidas
+git log -2 # muestra el historial de las últimas dos confirmaciones
+git log --stat # muestra las confirmaciones pero incluye una estadística de las modificaciones
+git log --pretty=oneline # la opción "pretty" da formato a la salida. Opciones de "pretty" pueden ser oneline, short, short, fuller o format (%h, %an, %ar, %s, etc.)
+git log --pretty=format:"%h - %an, %ar : %s"
+git log --pretty=format:"%h %s" --graph # incluye un gráfico de las confirmaciones
+git log --since=1.days # también se pueden filtrar los resultados, por opciones en número de confirmaciones (usando <n> como el número entero) o con opciones temporales
