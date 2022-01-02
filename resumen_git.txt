@@ -12,7 +12,7 @@ git help <verb>
 git <verb> --help
 man git-<verb>
 
-
+# para preparar la confirmación
 git init # sirve para iniciar un repositorio
 git clone https://github.com/AlvinPortillo/prueba_publico.git # clona un repositorio existente
 git clone https://github.com/AlvinPortillo/prueba_publico.git  carpeta # igual que el anterior, pero establece el nombre del repositorio
@@ -23,3 +23,7 @@ git add resumen_git.txt # añade un archivo a la zona de "rastreados". Si un arc
 git diff # muestra los cambios que han sido realizados y que no están preparados
 git diff --staged # muestras los cambios realizados desde la última confirmación
 git diff --cached # lo mismo que "git diff --staged"
+
+# para confirmar
+git commit # abrirá el editor designado en la configuración. Cuando se guarde este archivo, se abrá confirmado
+git commit -v # igual que el anerior, pero en el archivo de salida mostrará un mayor detalle de los cambios
