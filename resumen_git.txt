@@ -1,0 +1,25 @@
+# configuración inicial. Lo que corresponde al usuario es para ser cargada en el archivo de confirmaciones. El editor, indica, qué programa se abrirá para editar
+git config --global user.name "alvin"
+git config --global user.email alvin.portillo@gmail.com
+git config --global core.editor nvim
+
+# para listar la configuración
+git config --list # para ver toda la lista de configuraciones
+git config user.name # para ver un campo especifico de la configuración
+
+# para obtener ayuda
+git help <verb>
+git <verb> --help
+man git-<verb>
+
+
+git init # sirve para iniciar un repositorio
+git clone https://github.com/AlvinPortillo/prueba_publico.git # clona un repositorio existente
+git clone https://github.com/AlvinPortillo/prueba_publico.git  carpeta # igual que el anterior, pero establece el nombre del repositorio
+git status # presenta un estado de los archivos dentro del repositorio
+git status -s # es una version resumida de "git status"
+git add resumen_git.txt # añade un archivo a la zona de "rastreados". Si un archivo ha sido modificado, añade este nuevo archivo modifcado para su seguimiento.
+.gitignore # es el archivo que contendrá las expresiones regulares de los archivos que se van a ignorar en el rastreo.
+git diff # muestra los cambios que han sido realizados y que no están preparados
+git diff --staged # muestras los cambios realizados desde la última confirmación
+git diff --cached # lo mismo que "git diff --staged"

@@ -1,3 +1,4 @@
 Nuevo archivo
 New line
 Another new line
+Editado
