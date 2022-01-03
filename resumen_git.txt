@@ -1,3 +1,5 @@
+########## RESUMEN DE GIT ##########
+
 # configuración inicial. Lo que corresponde al usuario es para ser cargada en el archivo de confirmaciones. El editor, indica, qué programa se abrirá para editar
 git config --global user.name "alvin"
 git config --global user.email alvin.portillo@gmail.com
@@ -57,4 +59,21 @@ git log --stat # muestra las confirmaciones pero incluye una estadística de las
 git log --pretty=oneline # la opción "pretty" da formato a la salida. Opciones de "pretty" pueden ser oneline, short, short, fuller o format (%h, %an, %ar, %s, etc.)
 git log --pretty=format:"%h - %an, %ar : %s"
 git log --pretty=format:"%h %s" --graph # incluye un gráfico de las confirmaciones
-git log --since=1.days # también se pueden filtrar los resultados, por opciones en número de confirmaciones (usando <n> como el número entero) o con opciones temporales
+git log --since=1.days # también se pueden filtrar los resultados, por opciones en número de confirmaciones (usando <n> como el número entero) o con opciones temporales. También usando filtros como autor o committer (--author=alvin --committer=alvin).
+
+# para deshacer cambios sobre la última confirmación. Es decir, no se pueden modificar confirmaciones previas a la última.
+git commit --amend
+
+# para deshacer cambios sobre el área de preparación, se pueden seguir las recomendaciones del mismo git
+git restore --staged resumen_git.txt # esto quita el archivo resument_git.txt del area de preparación
+
+# para trabajar con remotos
+git remote # muestra el NOMBRE de los remotos que se tienen configurado. Debería aparecer al menos "remote"
+git remote -v # muestra la dirección url de estos remotos configurados
+# para agregar repositorios remotos "git remote add [nombre] [url]"
+git remote add R_git https://github.com/AlvinPortillo/R.git
+git fetch [remote name] # va al proyecto remoto y trae toda la información, ahora estará disponible 
+# para poder enviar a los remotos
+git push [nombre remoto] [nombre rama] # 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 (token actual)
+# para inspeccionar remotos
+git remote show [nombre remoto]
